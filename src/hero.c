@@ -30,7 +30,7 @@ void createHero(void){
     Hero.moveSpeed = 18;
     Hero.framesCount = 1;
     Hero.health = 10;
-    Hero.texture = loadTexture("resources/sprites/turboC.png");
+    //Hero.texture = loadTexture("resources/sprites/turboC.png");
 
     limitX = app.w_X;
     limitY = app.w_Y;
@@ -104,6 +104,12 @@ void playerInputs(){
     if(app.left){
         if(Hero.x <= 0)return;
         Hero.x -= Hero.moveSpeed;
+    }
+    if(app.up){
+        Hero.y -= Hero.moveSpeed;
+    }
+    if(app.down){
+        Hero.y += Hero.moveSpeed;
     }
     if(app.interacted){
         interact();
