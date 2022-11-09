@@ -36,6 +36,11 @@ typedef struct {
 } Entity;
 
 typedef struct {
+    Entity *start;
+    int tam;
+} List;
+
+typedef struct {
     SDL_Texture *texture;
 } UI_Entity;
 
