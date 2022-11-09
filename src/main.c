@@ -1,6 +1,10 @@
-#define SDL_MAIN_HANDLED
+#ifdef __linux__
+#include <SDL2/SDL.h>
+#endif
 
+#ifdef _WIN32
 #include "../srch/include/SDL2/SDL.h"
+#endif
 #include "../srch/init.h"
 #include "../srch/draw.h"
 #include "../srch/spawn.h"

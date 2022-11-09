@@ -1,4 +1,10 @@
+#ifdef __linux__
+#include <SDL2/SDL.h>
+#endif
+
+#ifdef _WIN32
 #include "../srch/include/SDL2/SDL.h"
+#endif
 #include "../srch/draw.h"
 #include <stdio.h>
 #include <inttypes.h>

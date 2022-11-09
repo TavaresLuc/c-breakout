@@ -1,7 +1,13 @@
 #ifndef STRUCT_H
 #define STRUCT_H
 
-#include "include/SDL2/SDL.h"
+#ifdef __linux__
+#include <SDL2/SDL.h>
+#endif
+
+#ifdef _WIN32
+#include "../srch/include/SDL2/SDL.h"
+#endif
 #include <stdbool.h>
 
 typedef struct{

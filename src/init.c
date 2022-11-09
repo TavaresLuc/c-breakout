@@ -1,9 +1,18 @@
+#ifdef __linux__
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_mixer.h>
+#endif
+
+#ifdef _WIN32
 #include "../srch/include/SDL2/SDL.h"
 #include "../srch/include/SDL2/SDL_image.h"
+#include "../srch/include/SDL2/SDL_mixer.h"
+#endif
+
 #include "../srch/defs.h"
 #include "../srch/structs.h"
 #include "../srch/init.h"
-#include "../srch/include/SDL2/SDL_mixer.h"
 #include <stdio.h>
 
 App app;

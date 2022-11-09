@@ -1,4 +1,10 @@
-#include "include/SDL2/SDL.h"
+#ifdef __linux__
+#include <SDL2/SDL.h>
+#endif
+
+#ifdef _WIN32
+#include "../srch/include/SDL2/SDL.h"
+#endif
 
 extern void prepareScene(void);
 extern void presentScene(void);

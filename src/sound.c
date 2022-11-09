@@ -1,5 +1,13 @@
+#ifdef __linux__
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_mixer.h>
+#include <SDL2/SDL_audio.h>
+#endif
+
+#ifdef _WIN32
 #include "../srch/include/SDL2/SDL.h"
 #include "../srch/include/SDL2/SDL_mixer.h"
+#endif
 #include "../srch/defs.h"
 #include "../srch/sound.h"
 #include <stdio.h>

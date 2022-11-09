@@ -1,5 +1,12 @@
+#ifdef __linux__
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#endif
+
+#ifdef _WIN32
 #include "../srch/include/SDL2/SDL.h"
 #include "../srch/include/SDL2/SDL_image.h"
+#endif
 #include "../srch/structs.h"
 #include "../srch/draw.h"
 #include <stdio.h>
