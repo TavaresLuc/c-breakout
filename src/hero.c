@@ -36,7 +36,7 @@ void createHero(void){
     Hero.moveSpeed = 18;
     Hero.framesCount = 1;
     Hero.health = 10;
-    //Hero.texture = loadTexture("resources/sprites/turboC.png");
+    Hero.texture = loadTexture("resources/sprites/groundatlas.png");
 
     limitX = app.w_X;
     limitY = app.w_Y;

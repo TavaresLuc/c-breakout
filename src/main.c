@@ -3,6 +3,7 @@
 #endif
 
 #ifdef _WIN32
+#define SDL_MAIN_HANDLED
 #include "../srch/include/SDL2/SDL.h"
 #endif
 #include "../srch/init.h"
@@ -76,7 +77,7 @@ int main(int argc, char *argv[]){
 	loadMusic("resources/sounds/intro.ogg");
 	playMusic(0);
 #endif
-	int i = 0;
+	/*int i = 0;
 	while(storyEntity.y >= 0){
 		prepareScene();
 
@@ -93,7 +94,7 @@ int main(int argc, char *argv[]){
 		presentScene();	
 
 		SDL_Delay(64);
-	}
+	}*/
 	
 	//main loop
 	while (1)
