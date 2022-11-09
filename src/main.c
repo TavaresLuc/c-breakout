@@ -36,11 +36,11 @@ void start(){
 #endif
 
 	initSDL();
+	createHero();
 	initSpawn();
 	initSound();
 	atexit(cleanup);
 
-	createHero();
 	logoEntity.texture = loadTexture("resources/logo.png");
 
 	storyEntity.texture = loadTexture("resources/intro.png");
@@ -107,7 +107,20 @@ int main(int argc, char *argv[]){
 		playerInputs();
 
 		animatePlayer();
-        blit(Hero.texture, 3, Hero.x, Hero.y, 0, 0);
+        blit(Hero.texture, 2, Hero.x, Hero.y, 0, 0);
+
+		for (size_t i = 0; i < list.tam; i++)
+		{
+			/* code */
+			Entity* e = getEntity(i);
+			if(e){
+				if(e->texture != NULL){
+					printf("Drawing this entity...");
+					blit(e->texture, 2, e->x, e->y, 0, 0);
+				}
+			}
+		}
+		
 
 		presentScene();
 

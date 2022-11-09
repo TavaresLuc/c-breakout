@@ -35,6 +35,7 @@ typedef struct entity{
     int increaseMax;
     int currentFrame;
     int type;
+    int id;
     char name;
     bool slowed;
     struct entity *next;
