@@ -118,6 +118,11 @@ int main(int argc, char *argv[]){
 					printf("Drawing this entity...");
 					blit(e->texture, 2, e->x, e->y, 0, 0);
 				}
+				if(e->x + 19 >= Hero.x && e->x <= (Hero.x + 22) &&
+               		e->y + 23 >= Hero.y && e->y <= (Hero.y + 24))
+				{
+					e->texture = NULL;
+				}
 			}
 		}
 		
