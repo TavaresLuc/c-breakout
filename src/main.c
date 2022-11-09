@@ -103,7 +103,6 @@ int main(int argc, char *argv[]){
 
 		animatePlayer();
         blit(Hero.texture, 3, Hero.x, Hero.y, 0, 0);
-		readSpawn();
 
 		presentScene();
 

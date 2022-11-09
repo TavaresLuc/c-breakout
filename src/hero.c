@@ -83,9 +83,6 @@ void jump(){
     jumped = 1;
     j_cooldown = 0;
     printf("\n Starting game!");
-    for(int i = 0; i < 3; i++){
-        spawnRemove(i);
-    }
 }
 
 void playerInputs(){
