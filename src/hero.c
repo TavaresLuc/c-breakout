@@ -36,7 +36,7 @@ void createHero(void){
     Hero.moveSpeed = 18;
     Hero.framesCount = 1;
     Hero.health = 10;
-    Hero.texture = loadTexture("resources/sprites/groundatlas.png");
+    Hero.texture = loadTexture("resources/sprites/hero.png");
 
     limitX = app.w_X;
     limitY = app.w_Y;
@@ -88,6 +88,7 @@ void jump(){
     if(jumped)return;
     jumped = 1;
     j_cooldown = 0;
+    printf("Tamanho da lista atual : %i", list.tam);
     printf("\n Starting game!");
 }
 

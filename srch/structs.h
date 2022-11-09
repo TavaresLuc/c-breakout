@@ -23,7 +23,7 @@ typedef struct{
     int jump;
 } App;
 
-typedef struct {
+typedef struct entity{
     int x;
     int y;
     int moveSpeed;
@@ -34,9 +34,10 @@ typedef struct {
     int increaseYAmt;
     int increaseMax;
     int currentFrame;
+    int type;
     char name;
     bool slowed;
-    struct Entity *next;
+    struct entity *next;
     SDL_Texture *texture;
     SDL_Texture *frames[];
 } Entity;
