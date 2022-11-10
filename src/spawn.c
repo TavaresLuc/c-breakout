@@ -53,6 +53,7 @@ void addEntity(){
         new->texture = NULL;
         switch(t){
             case 0:
+                new->texture = loadTexture("resources/sprites/amandas.png");
             break;
             case 1:
             break;
@@ -62,6 +63,7 @@ void addEntity(){
             case 3:
             break;
             case 4:
+                new->texture = loadTexture("resources/sprites/krapas.png");
             break;
         }
         list.start = new;
