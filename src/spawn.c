@@ -16,10 +16,18 @@
 #include <stdlib.h>
 
 List list;
+SDL_Texture *textures[5];
 
 void initSpawn(){
     list.start = NULL;
     list.tam = 0;
+
+    textures[0] = loadTexture("resources/sprites/block.png");
+    textures[1] = loadTexture("resources/sprites/block_damaged1.png");
+    textures[2] = loadTexture("resources/sprites/block_damaged2.png");
+    textures[3] = loadTexture("resources/sprites/block_damaged3.png");
+    textures[4] = loadTexture("resources/sprites/block_destroyed.png");
+
 
     for (size_t i = 0; i < STUDENTS_AMOUNT; i++)
     {
@@ -48,8 +56,9 @@ void addEntity(){
         new->type = t;
         new->x = x;
         new->y = y;
+        new->health = 0;
         new->id = list.tam;
-        new->texture = loadTexture("resources/sprites/block.png");
+        new->texture = textures[new->health];
         list.start = new;
         list.tam++;
     }else{
