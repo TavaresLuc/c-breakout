@@ -17,6 +17,7 @@ Entity ball;
 int shoot = 0;
 
 int xSpeed = 0, ySpeed = 0;
+int defaultSpeed = 3;
 
 void create_ball(int x, int y){
     ball.x = y;
@@ -39,14 +40,25 @@ void move_ball(){
         ball.x = Hero.x + 29;
         ball.y = Hero.y -16;
     }else{
-        ball.y += ySpeed;
+        ball.y += (ySpeed*defaultSpeed);
         ball.x += xSpeed;
     }
 }
 
 void ball_bounce(){
+    if(ball.x + 18 >= (Hero.x+12) && ball.x <= (Hero.x + 60) &&
+       ball.y + 20 >= Hero.y && ball.y <= (Hero.y + 34)){
+
+        int dif = ball.x-Hero.x;
+        if(dif <= 20)xSpeed = -3;
+        if(dif > 20 && dif < 30)xSpeed = 0;
+        if(dif >= 30)xSpeed = 3;
+        ySpeed = -2;
+    }
+
+    
     if(ball.y <= 0)ySpeed = 2;
     if(ball.y >= app.w_Y)ySpeed = -2;
-    if(ball.x >= app.w_X)xSpeed = -2;
+    if(ball.x >= app.w_X-18)xSpeed = -2;
     if(ball.x <= 0)xSpeed = 2;
 }
