@@ -17,11 +17,16 @@ Entity ball;
 int shoot = 0;
 
 int xSpeed = 0, ySpeed = 0;
-int defaultSpeed = 3;
+int defaultSpeed = 4;
 
-void create_ball(int x, int y){
-    ball.x = y;
-    ball.y = x;
+void start_ball(){
+    shoot = 0;
+    ball.x = Hero.x + 29;
+    ball.y = Hero.y -16;
+}
+
+void create_ball(){
+    start_ball();
     ball.texture = loadTexture("resources/sprites/ball.png");
 }
 
@@ -77,7 +82,9 @@ void ball_bounce(){
 
     
     if(ball.y <= 0)ySpeed = 2;
-    if(ball.y >= app.w_Y)ySpeed = -2;
+    if(ball.y >= app.w_Y){
+        reset();
+    }
     if(ball.x >= app.w_X-18)xSpeed = -2;
     if(ball.x <= 0)xSpeed = 2;
 }

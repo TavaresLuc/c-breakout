@@ -74,6 +74,22 @@ void debug(){
     printf("\n Size of the scren: X%i Y%i", app.w_X, app.w_Y);
 }
 
+void reset(){
+    start_ball();
+    Hero.x = app.w_X/2;
+    Hero.y = limitY;
+    
+    for (size_t i = 0; i < list.tam; i++)
+	{
+			/* code */
+		Entity* e = getEntity(i);
+		if(e){
+            e->work = false;
+            e->texture = loadTexture("resources/sprites/block.png");
+		}
+	}
+}
+
 
 void interact(){
     if(interacted)return;
@@ -91,8 +107,7 @@ void jump(){
     if(jumped)return;
     jumped = 1;
     j_cooldown = 0;
-    printf("Tamanho da lista atual : %i", list.tam);
-    printf("\n Starting game!");
+    reset();
 }
 
 void playerInputs(){

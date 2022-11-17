@@ -1,4 +1,5 @@
-extern void create_ball(int x, int y);
+extern void start_ball();
+extern void create_ball();
 extern void draw_ball();
 extern void move_ball();
 extern void shoot_ball(int x, int y);

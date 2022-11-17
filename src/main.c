@@ -38,7 +38,7 @@ void start(){
 
 	initSDL();
 	createHero();
-	create_ball(Hero.x, Hero.y - 10);
+	create_ball();
 	initSpawn();
 	initSound();
 	atexit(cleanup);
