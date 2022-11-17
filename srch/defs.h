@@ -17,7 +17,8 @@
 
 #define MAX_SND_CHANNELS 8
 
-#define STUDENTS_AMOUNT 65
+#define BLOCKS_AMOUNT 232
+#define WALLS_AMOUNT 20
 
 enum
 {
@@ -31,12 +32,4 @@ enum{
     SND_PLAYER_COLLECT = 1,
     SND_FILA_REMOVE = 2,
     SND_PLAYER_FAIL = 3
-};
-
-enum{
-    AMANDAS = 0,
-    MAGO = 1,
-    VENANCIO = 2,
-    BRENO = 3,
-    KRAPAS = 4
 };

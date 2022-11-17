@@ -37,7 +37,7 @@ void createHero(void){
 
     Hero.x = app.w_X/2;
     Hero.y = limitY;
-    Hero.moveSpeed = 5;
+    Hero.moveSpeed = 6;
     Hero.framesCount = 1;
     Hero.health = 10;
     Hero.texture = loadTexture("resources/sprites/hero.png");
@@ -82,7 +82,7 @@ void reset(){
     for (size_t i = 0; i < list.tam; i++)
 	{
 			/* code */
-		Entity* e = getEntity(i);
+		Entity* e = getEntity(i, list);
 		if(e){
             e->work = false;
             e->health = 0;

@@ -117,7 +117,7 @@ int main(int argc, char *argv[]){
 		for (size_t i = 0; i < list.tam; i++)
 		{
 			/* code */
-			Entity* e = getEntity(i);
+			Entity* e = getEntity(i, list);
 			if(e){
 				if(e->texture != NULL){
 					blit(e->texture, 2, e->x, e->y, 0, 0);
@@ -127,11 +127,26 @@ int main(int argc, char *argv[]){
                		e->y + 26 >= ball_getY() && e->y <= (ball_getY() + 18))
 				{
 					ball_getBounce(e->x, e->y);
-					e->health++;
+					e->health += 2;
 					if(e->health >= 4){
 						e->work = true;
 					}
 					e->texture = textures[e->health];
+				}
+			}
+		}
+		for (size_t i = 0; i < wallList.tam; i++)
+		{
+			/* code */
+			Entity* e = getEntity(i, wallList);
+			if(e){
+				if(e->texture != NULL){
+					blit(e->texture, 2, e->x, e->y, 0, 0);
+				}
+				if(e->x + 36 >= ball_getX() && e->x <= (ball_getX() + 20) &&
+               		e->y + 26 >= ball_getY() && e->y <= (ball_getY() + 18))
+				{
+					ball_getBounce(e->x, e->y);
 				}
 			}
 		}
