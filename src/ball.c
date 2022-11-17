@@ -35,6 +35,13 @@ void shoot_ball(int x, int y){
     ySpeed = y;
 }
 
+int ball_getX(){
+    return ball.x;
+}
+int ball_getY(){
+    return ball.y;
+}
+
 void move_ball(){
     if(shoot == 0){
         ball.x = Hero.x + 29;
@@ -43,6 +50,18 @@ void move_ball(){
         ball.y += (ySpeed*defaultSpeed);
         ball.x += xSpeed;
     }
+}
+
+void ball_getBounce(int x, int y){
+    printf("Object Y: %i Ball Y: %i \n", y, ball.y);
+    int dif = ball.x-x;
+
+    if(dif <= 20)xSpeed = -3;
+    if(dif > 20 && dif < 30)xSpeed = 0;
+    if(dif >= 30)xSpeed = 3;
+
+    if(ball.y > y)ySpeed = 2;
+    if(ball.y <= y)ySpeed = -2;
 }
 
 void ball_bounce(){

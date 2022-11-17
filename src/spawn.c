@@ -34,21 +34,20 @@ void addEntity(){
 
     if(new){
         int t = rand() % 6;
-        int x = rand() % 335;
-        int y = rand() % 135;
+        int x = rand() % 835;
+        int y = rand() % 235;
 
         int negativeX = rand() % 2;
         int negativeY = rand() % 2;
 
         if(negativeX == 0)
             x = -x;
-        if(negativeY == 0)
-            y = -y;
+        
 
         new->next = list.start;
         new->type = t;
-        new->x = Hero.x + x;
-        new->y = Hero.y + y;
+        new->x = x;
+        new->y = y;
         new->id = list.tam;
         new->texture = loadTexture("resources/sprites/block.png");
         list.start = new;

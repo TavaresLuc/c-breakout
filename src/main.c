@@ -119,12 +119,15 @@ int main(int argc, char *argv[]){
 			/* code */
 			Entity* e = getEntity(i);
 			if(e){
+				if(e->work == true)continue;
 				if(e->texture != NULL){
 					blit(e->texture, 2, e->x, e->y, 0, 0);
 				}
-				if(e->x + 19 >= Hero.x && e->x <= (Hero.x + 22) &&
-               		e->y + 23 >= Hero.y && e->y <= (Hero.y + 24))
+				if(e->x + 36 >= ball_getX() && e->x <= (ball_getX() + 20) &&
+               		e->y + 26 >= ball_getY() && e->y <= (ball_getY() + 18))
 				{
+					e->work = true;
+					ball_getBounce(e->x, e->y);
 					e->texture = NULL;
 				}
 			}

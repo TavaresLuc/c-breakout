@@ -38,6 +38,7 @@ typedef struct entity{
     int id;
     char name;
     bool slowed;
+    bool work;
     struct entity *next;
     SDL_Texture *texture;
     SDL_Texture *frames[];
