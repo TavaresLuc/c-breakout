@@ -14,7 +14,7 @@
 
 void prepareScene(void)
 {
-	SDL_SetRenderDrawColor(app.renderer, 0, 0, 255, 255);
+	SDL_SetRenderDrawColor(app.renderer, 0, 57, 109, 255);
 	SDL_RenderClear(app.renderer);
 }
 

@@ -50,25 +50,9 @@ void addEntity(){
         new->x = Hero.x + x;
         new->y = Hero.y + y;
         new->id = list.tam;
-        new->texture = NULL;
-        switch(t){
-            case 0:
-                new->texture = loadTexture("resources/sprites/amandas.png");
-            break;
-            case 1:
-            break;
-            case 2:
-                new->texture = loadTexture("resources/sprites/venancio.png");
-            break;
-            case 3:
-            break;
-            case 4:
-                new->texture = loadTexture("resources/sprites/krapas.png");
-            break;
-        }
+        new->texture = loadTexture("resources/sprites/block.png");
         list.start = new;
         list.tam++;
-        printf("Created a %i type character on position %i", t, list.tam);
     }else{
         printf("Erro ao alocar memoria! \n");
     }
@@ -85,7 +69,6 @@ Entity* getEntity(int num){
             aux = aux->next;
         }
         if(aux->next->id == num){
-            printf("Returning entity for.. %i", aux->id);
             return aux;
         }
     }

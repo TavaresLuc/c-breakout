@@ -1,0 +1,15 @@
+{
+    "skipTerminateQuickPick": true,
+    "skipSwitchToOutput": false,
+    "skipErrorMessage": true,
+    "commands": [
+        {
+            "text": "⚙️ W_Build",
+            "color": "orange",
+            "alignment": "right",
+            "command": "build.bat && start dist/heroes.exe",
+            "skipTerminateQuickPick": false,
+            "priority": 0
+        }
+    ]
+}

@@ -115,7 +115,6 @@ int main(int argc, char *argv[]){
 			Entity* e = getEntity(i);
 			if(e){
 				if(e->texture != NULL){
-					printf("Drawing this entity...");
 					blit(e->texture, 2, e->x, e->y, 0, 0);
 				}
 				if(e->x + 19 >= Hero.x && e->x <= (Hero.x + 22) &&

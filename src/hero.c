@@ -31,15 +31,16 @@ int jump_cd = 16;
 int limitX, limitY;
 
 void createHero(void){
+    limitY = app.w_Y-50;
+    limitX = app.w_X;
+
     Hero.x = app.w_X/2;
-    Hero.y = app.w_Y-350;
-    Hero.moveSpeed = 2;
+    Hero.y = limitY;
+    Hero.moveSpeed = 6;
     Hero.framesCount = 1;
     Hero.health = 10;
     Hero.texture = loadTexture("resources/sprites/hero.png");
 
-    limitX = app.w_X;
-    limitY = app.w_Y;
     //Hero.frames[0] = loadTexture("resources/sprites/player.png");
     //Hero.frames[1] = loadTexture("resources/sprites/player1.png");
     //hero = &_hero;
@@ -102,7 +103,7 @@ void playerInputs(){
         Hero.y += Hero.moveSpeed;
     }*/
     if(app.right){
-        if(Hero.x >= app.w_X-16)return;
+        if(Hero.x >= app.w_X-76)return;
         Hero.x += Hero.moveSpeed;
     }
     if(app.left){
@@ -110,9 +111,11 @@ void playerInputs(){
         Hero.x -= Hero.moveSpeed;
     }
     if(app.up){
+        if(Hero.y <= limitY - 50)return;
         Hero.y -= Hero.moveSpeed;
     }
     if(app.down){
+        if(Hero.y >= limitY)return;
         Hero.y += Hero.moveSpeed;
     }
     if(app.interacted){
