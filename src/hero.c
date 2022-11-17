@@ -10,6 +10,7 @@
 #include <inttypes.h>
 #include "../srch/spawn.h"
 #include "../srch/structs.h"
+#include "../srch/ball.h"
 #include "../srch/hero.h"
 
 
@@ -36,7 +37,7 @@ void createHero(void){
 
     Hero.x = app.w_X/2;
     Hero.y = limitY;
-    Hero.moveSpeed = 6;
+    Hero.moveSpeed = 4;
     Hero.framesCount = 1;
     Hero.health = 10;
     Hero.texture = loadTexture("resources/sprites/hero.png");
@@ -79,6 +80,7 @@ void interact(){
     interacted = 1;
     i_cooldown = 0;
     printf("\n Player trying to interact");
+    shoot_ball(0, -2);
 #if DEMO
     debug();
 #endif

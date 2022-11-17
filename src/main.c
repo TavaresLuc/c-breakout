@@ -14,6 +14,7 @@
 #include "../srch/input.h"
 #include "../srch/structs.h"
 #include "../srch/hero.h"
+#include "../srch/ball.h"
 #include "../srch/sound.h"
 #include <stdio.h>
 #include <string.h>
@@ -37,6 +38,7 @@ void start(){
 
 	initSDL();
 	createHero();
+	create_ball(Hero.x, Hero.y - 10);
 	initSpawn();
 	initSound();
 	atexit(cleanup);
@@ -105,9 +107,12 @@ int main(int argc, char *argv[]){
 		doInput();
 
 		playerInputs();
+		move_ball();
+		ball_bounce();
 
 		animatePlayer();
         blit(Hero.texture, 2, Hero.x, Hero.y, 0, 0);
+		draw_ball();
 
 		for (size_t i = 0; i < list.tam; i++)
 		{
