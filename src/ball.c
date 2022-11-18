@@ -6,6 +6,7 @@
 #include "../srch/include/SDL2/SDL.h"
 #endif
 #include "../srch/draw.h"
+#include "../srch/defs.h"
 #include <stdio.h>
 #include <inttypes.h>
 #include "../srch/spawn.h"
@@ -78,13 +79,24 @@ void ball_bounce(){
         if(dif > 20 && dif < 30)xSpeed = 0;
         if(dif >= 30)xSpeed = 3;
         ySpeed = -2;
+        if(shoot == 1)playSound(SND_PLATFORM_BOUNCE, 1);
+        return;
     }
 
     
-    if(ball.y <= 0)ySpeed = 2;
+    if(ball.y <= 0){
+        playSound(SND_BORDER_BOUNCE, 1);
+        ySpeed = 2;
+    }
     if(ball.y >= app.w_Y){
         reset();
     }
-    if(ball.x >= app.w_X-18)xSpeed = -2;
-    if(ball.x <= 0)xSpeed = 2;
+    if(ball.x >= app.w_X-18){
+        playSound(SND_BORDER_BOUNCE, 1);
+        xSpeed = -2;
+    }
+    if(ball.x <= 0){
+        playSound(SND_BORDER_BOUNCE, 1);
+        xSpeed = 2;
+    }
 }

@@ -13,15 +13,16 @@
 #include <stdio.h>
 #include <string.h>
 
-Mix_Chunk* sounds[4];
+Mix_Chunk* sounds[5];
 
 Mix_Music* music;
 
 void loadSounds(void){
     sounds[SND_SPLASH] = Mix_LoadWAV("resources/sounds/enter.ogg");
-    sounds[SND_PLAYER_COLLECT] = Mix_LoadWAV("resources/sounds/collect.ogg");
-    sounds[SND_FILA_REMOVE] = Mix_LoadWAV("resources/sounds/remove.ogg");
-    sounds[SND_PLAYER_FAIL] = Mix_LoadWAV("resources/sounds/fail.ogg");
+    sounds[SND_WALL_BOUNCE] = Mix_LoadWAV("resources/sounds/wall_bounce.wav");
+    sounds[SND_BLOCK_BOUNCE] = Mix_LoadWAV("resources/sounds/block_bounce.wav");
+    sounds[SND_PLATFORM_BOUNCE] = Mix_LoadWAV("resources/sounds/platform_bounce.wav");
+    sounds[SND_BORDER_BOUNCE] = Mix_LoadWAV("resources/sounds/border_bounce.wav");
 }
 
 void loadMusic(char *filename){

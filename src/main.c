@@ -138,6 +138,7 @@ int main(int argc, char *argv[]){
 					if(e->health >= 4){
 						e->work = true;
 					}
+					playSound(SND_BLOCK_BOUNCE, 1);
 					e->texture = textures[e->health];
 				}
 			}
@@ -153,6 +154,7 @@ int main(int argc, char *argv[]){
 				if(e->x + 36 >= ball_getX() && e->x <= (ball_getX() + 20) &&
                		e->y + 26 >= ball_getY() && e->y <= (ball_getY() + 18))
 				{
+					playSound(SND_WALL_BOUNCE, 1);
 					ball_getBounce(e->x, e->y);
 				}
 			}
