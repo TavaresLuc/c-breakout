@@ -108,7 +108,7 @@ void addWall(){
         new->texture = textures[5];
         wallList.start = new;
         wallList.tam++;
-        wallListX += 160;
+        wallListX += 180;
     }else{
         printf("Erro ao alocar memoria! \n");
     }
