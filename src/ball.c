@@ -59,12 +59,16 @@ void move_ball(){
 }
 
 void ball_getBounce(int x, int y){
-    printf("Object Y: %i Ball Y: %i \n", y, ball.y);
     int dif = ball.x-x;
+    printf("Object Y: %i Ball Y: %i Diff: %i \n", y, ball.y, dif);
 
-    if(dif <= 3)xSpeed = -2;
-    if(dif > 3 && dif < 6)xSpeed = 0;
-    if(dif >= 6)xSpeed = 2;
+    if(dif <= -10)xSpeed = -2;
+    if(dif <= 2 && dif > -10)xSpeed = -1;
+    if(dif > 2 && dif < 7)xSpeed = 0;
+    if(dif >= 7 && dif < 11)xSpeed = 1;
+    if(dif >= 12)xSpeed = 2;
+
+    printf("%i \n", xSpeed);
 
     if(ball.y > y)ySpeed = 2;
     if(ball.y <= y)ySpeed = -2;

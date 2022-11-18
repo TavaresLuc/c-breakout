@@ -131,8 +131,8 @@ int main(int argc, char *argv[]){
 					blit(e->texture, 2, e->x, e->y, 0, 0);
 				}
 				if(e->work == true)continue;
-				if(e->x + 18 >= ball_getX() && e->x <= (ball_getX() + 10) &&
-               		e->y + 13 >= ball_getY() && e->y <= (ball_getY() + 9))
+				if(e->x + 24 >= ball_getX() && e->x <= (ball_getX() + 23) &&
+               		e->y + 20 >= ball_getY() && e->y <= (ball_getY() + 16))
 				{
 					ball_getBounce(e->x, e->y);
 					e->health += 2;
@@ -152,8 +152,8 @@ int main(int argc, char *argv[]){
 				if(e->texture != NULL){
 					blit(e->texture, 2, e->x, e->y, 0, 0);
 				}
-				if(e->x + 18 >= ball_getX() && e->x <= (ball_getX() + 10) &&
-               		e->y + 13 >= ball_getY() && e->y <= (ball_getY() + 9))
+				if(e->x + 24 >= ball_getX() && e->x <= (ball_getX() + 23) &&
+               		e->y + 20 >= ball_getY() && e->y <= (ball_getY() + 16))
 				{
 					playSound(SND_WALL_BOUNCE, 1);
 					ball_getBounce(e->x, e->y);
