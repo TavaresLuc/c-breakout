@@ -12,12 +12,13 @@
 #include "../srch/structs.h"
 #include "../srch/ball.h"
 #include "../srch/hero.h"
+#include "../srch/hud.h"
 
 
 Entity Hero;
 int idleAnim = 0;
 int interacted = 0;
-int health = 3;
+int health = 5;
 //our main thread runs at 16ms, so we can use this to multiply for the cd i.e 16x2 = 32ms
 int i_cooldown = 0;
 //cd for the interaction
@@ -79,7 +80,8 @@ void reset(){
     start_ball();
     Hero.x = app.w_X/2;
     Hero.y = limitY;
-    health = 3;
+    health = 5;
+    hud_change(health);
     
     for (size_t i = 0; i < list.tam; i++)
 	{
@@ -98,6 +100,7 @@ void respawn(){
     Hero.x = app.w_X/2;
     Hero.y = limitY;
     health--;
+    hud_change(health);
     if(health <= 0){
         reset();
     }

@@ -16,6 +16,7 @@
 #include "../srch/hero.h"
 #include "../srch/ball.h"
 #include "../srch/sound.h"
+#include "../srch/hud.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -46,6 +47,8 @@ void start(){
 	create_ball();
 	initSpawn();
 	initSound();
+	hud_init();
+
 	atexit(cleanup);
 
 	logoEntity.texture = loadTexture("resources/logo.png");
@@ -162,6 +165,7 @@ int main(int argc, char *argv[]){
 		}
 
 		draw_ball();
+		hud_draw();
 		
 
 		presentScene();
