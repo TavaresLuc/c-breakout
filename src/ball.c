@@ -62,12 +62,12 @@ void ball_getBounce(int x, int y){
     printf("Object Y: %i Ball Y: %i \n", y, ball.y);
     int dif = ball.x-x;
 
-    if(dif <= 10)xSpeed = -3;
-    if(dif > 10 && dif < 20)xSpeed = 0;
-    if(dif >= 20)xSpeed = 3;
+    if(dif <= 3)xSpeed = -2;
+    if(dif > 3 && dif < 6)xSpeed = 0;
+    if(dif >= 6)xSpeed = 2;
 
-    if(ball.y > y)ySpeed = 3;
-    if(ball.y <= y)ySpeed = -3;
+    if(ball.y > y)ySpeed = 2;
+    if(ball.y <= y)ySpeed = -2;
 }
 
 void ball_bounce(){
@@ -75,9 +75,9 @@ void ball_bounce(){
        ball.y + 20 >= Hero.y && ball.y <= (Hero.y + 34)){
 
         int dif = ball.x-Hero.x;
-        if(dif <= 20)xSpeed = -3;
+        if(dif <= 20)xSpeed = -2;
         if(dif > 20 && dif < 30)xSpeed = 0;
-        if(dif >= 30)xSpeed = 3;
+        if(dif >= 30)xSpeed = 2;
         ySpeed = -2;
         if(shoot == 1)playSound(SND_PLATFORM_BOUNCE, 1);
         return;

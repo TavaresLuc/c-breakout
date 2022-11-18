@@ -64,6 +64,7 @@ void start(){
 
 int main(int argc, char *argv[]){
 	start();
+	reset();
 
 	//splash screen loop
 #if SPLASH
@@ -130,8 +131,8 @@ int main(int argc, char *argv[]){
 					blit(e->texture, 2, e->x, e->y, 0, 0);
 				}
 				if(e->work == true)continue;
-				if(e->x + 36 >= ball_getX() && e->x <= (ball_getX() + 20) &&
-               		e->y + 26 >= ball_getY() && e->y <= (ball_getY() + 18))
+				if(e->x + 18 >= ball_getX() && e->x <= (ball_getX() + 10) &&
+               		e->y + 13 >= ball_getY() && e->y <= (ball_getY() + 9))
 				{
 					ball_getBounce(e->x, e->y);
 					e->health += 2;
@@ -151,8 +152,8 @@ int main(int argc, char *argv[]){
 				if(e->texture != NULL){
 					blit(e->texture, 2, e->x, e->y, 0, 0);
 				}
-				if(e->x + 36 >= ball_getX() && e->x <= (ball_getX() + 20) &&
-               		e->y + 26 >= ball_getY() && e->y <= (ball_getY() + 18))
+				if(e->x + 18 >= ball_getX() && e->x <= (ball_getX() + 10) &&
+               		e->y + 13 >= ball_getY() && e->y <= (ball_getY() + 9))
 				{
 					playSound(SND_WALL_BOUNCE, 1);
 					ball_getBounce(e->x, e->y);

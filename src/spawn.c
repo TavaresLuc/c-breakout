@@ -43,10 +43,28 @@ void initSpawn(){
     wallListY = app.w_Y - 180;
 
 
-    for (size_t i = 0; i < BLOCKS_AMOUNT; i++)
+    /* spawning the blocks */
+    for (size_t i = 0; i < BLOCKS_AMOUNT_1; i++)
     {
         /* code */
-        addEntity();
+        addEntity(32, 0);
+    }
+    for (size_t i = 0; i < BLOCKS_AMOUNT_2; i++)
+    {
+        /* code */
+        addEntity(0, 16);
+    }
+    for (size_t i = 0; i < BLOCKS_AMOUNT_1; i++)
+    {
+        /* code */
+        addEntity(-32, 0);
+    }
+    x = 32;
+    y = 50;
+    for (size_t i = 0; i < BLOCKS_AMOUNT_2+1; i++)
+    {
+        /* code */
+        addEntity(0, 16);
     }
     for (size_t i = 0; i < WALLS_AMOUNT; i++)
     {
@@ -57,7 +75,7 @@ void initSpawn(){
     
 }
 
-void addEntity(){
+void addEntity(int xx, int yy){
     Entity *new = malloc(sizeof(Entity));
 
     if(new){     
@@ -70,11 +88,9 @@ void addEntity(){
         new->texture = textures[new->health];
         list.start = new;
         list.tam++;
-        x += 32;
-        if(x >= 732){
-            y += 25;
-            x = 64;
-        }
+        x+=xx;
+        y+=yy;
+
     }else{
         printf("Erro ao alocar memoria! \n");
     }

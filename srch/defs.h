@@ -1,4 +1,4 @@
-#define SCREEN_WIDTH 800   
+#define SCREEN_WIDTH 1024   
 #define SCREEN_HEIGHT 600
 
 #define SPLASH_SCREEN "resources/longtimeago.png"
@@ -17,7 +17,10 @@
 
 #define MAX_SND_CHANNELS 8
 
-#define BLOCKS_AMOUNT 232
+#define BLOCKS_AMOUNT_1 28
+#define BLOCKS_AMOUNT_2 20
+#define BLOCKS_AMOUNT_3 28
+#define BLOCKS_AMOUNT_4 20
 #define WALLS_AMOUNT 20
 
 enum
