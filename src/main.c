@@ -21,8 +21,13 @@
 
 Entity storyEntity;
 Entity logoEntity;
+SDL_Texture *background;
 
 void cleanup(){
+
+}
+
+void bg_draw(){
 
 }
 
@@ -44,6 +49,7 @@ void start(){
 	atexit(cleanup);
 
 	logoEntity.texture = loadTexture("resources/logo.png");
+	background = loadTexture("resources/sprites/background.png");
 
 	storyEntity.texture = loadTexture("resources/intro.png");
 	storyEntity.y = app.w_Y  + 10;
@@ -111,8 +117,9 @@ int main(int argc, char *argv[]){
 		ball_bounce();
 
 		animatePlayer();
+		blit(background, 1, 0, 0, 0, 0);
+
         blit(Hero.texture, 2, Hero.x, Hero.y, 0, 0);
-		draw_ball();
 
 		for (size_t i = 0; i < list.tam; i++)
 		{
@@ -150,6 +157,8 @@ int main(int argc, char *argv[]){
 				}
 			}
 		}
+
+		draw_ball();
 		
 
 		presentScene();
