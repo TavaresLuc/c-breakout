@@ -89,7 +89,7 @@ void ball_bounce(){
         ySpeed = 2;
     }
     if(ball.y >= app.w_Y){
-        reset();
+        respawn();
     }
     if(ball.x >= app.w_X-18){
         playSound(SND_BORDER_BOUNCE, 1);

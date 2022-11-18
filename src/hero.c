@@ -17,6 +17,7 @@
 Entity Hero;
 int idleAnim = 0;
 int interacted = 0;
+int health = 3;
 //our main thread runs at 16ms, so we can use this to multiply for the cd i.e 16x2 = 32ms
 int i_cooldown = 0;
 //cd for the interaction
@@ -78,6 +79,7 @@ void reset(){
     start_ball();
     Hero.x = app.w_X/2;
     Hero.y = limitY;
+    health = 3;
     
     for (size_t i = 0; i < list.tam; i++)
 	{
@@ -89,6 +91,16 @@ void reset(){
             e->texture = textures[e->health];
 		}
 	}
+}
+
+void respawn(){
+    start_ball();
+    Hero.x = app.w_X/2;
+    Hero.y = limitY;
+    health--;
+    if(health <= 0){
+        reset();
+    }
 }
 
 
