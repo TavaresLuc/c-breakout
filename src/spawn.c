@@ -17,7 +17,7 @@
 
 List list;
 List wallList;
-SDL_Texture *textures[6];
+SDL_Texture *textures[7];
 
 int x, y;
 int wallListX, wallListY;
@@ -35,6 +35,7 @@ void initSpawn(){
     textures[3] = loadTexture("resources/sprites/block_damaged3.png");
     textures[4] = loadTexture("resources/sprites/block_destroyed.png");
     textures[5] = loadTexture("resources/sprites/wall.png");
+    textures[6] = loadTexture("resources/sprites/block_egg.png");
 
     x = 32;
     y = 50;
@@ -66,6 +67,34 @@ void initSpawn(){
         /* code */
         addEntity(0, 16);
     }
+    x = 96;
+    y = 114;
+    for (size_t i = 0; i < BLOCKS_AMOUNT_1-3; i++)
+    {
+        /* code */
+        addEntity(32, 0);
+    }
+    x = 96;
+    y = 228;
+    for (size_t i = 0; i < BLOCKS_AMOUNT_1-3; i++)
+    {
+        /* code */
+        addEntity(32, 0);
+    }
+    x = 96;
+    y = 312;
+    for (size_t i = 0; i < 2; i++)
+    {
+        /* code */
+        addEntity(32, 0);
+    }
+    x = 898;
+    y = 312;
+    for (size_t i = 0; i < 2; i++)
+    {
+        /* code */
+        addEntity(-32, 0);
+    }
     for (size_t i = 0; i < WALLS_AMOUNT; i++)
     {
         /* code */
@@ -86,6 +115,9 @@ void addEntity(int xx, int yy){
         new->health = 0;
         new->id = list.tam;
         new->texture = textures[new->health];
+        int i = rand() % 350;
+        if(i <= 25)
+            new->texture = textures[6];
         list.start = new;
         list.tam++;
         x+=xx;
